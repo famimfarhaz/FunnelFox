@@ -111,6 +111,7 @@ const Action = () => {
   const [foundBusinesses, setFoundBusinesses] = useState([]);
   const [selectedBusinessIds, setSelectedBusinessIds] = useState([]);
   const [isTestMode, setIsTestMode] = useState(false);
+  const [onlyEmail, setOnlyEmail] = useState(false);
   const [testEmail, setTestEmail] = useState('');
 
   // Step 2 & 3: Message
@@ -247,6 +248,11 @@ const Action = () => {
       const duplicates = [];
 
       mappedBusinesses.forEach(business => {
+        // If "Only Email" mode is enabled, skip businesses without emails
+        if (onlyEmail && !business.email) {
+          return;
+        }
+
         const isDuplicate = (existingContacts || []).some(contact => {
           const nameMatch = contact.name.toLowerCase() === business.name.toLowerCase();
           const phoneMatch = business.phone && contact.phone === business.phone;
@@ -262,7 +268,10 @@ const Action = () => {
       });
 
       if (uniqueMappedBusinesses.length === 0 && places.length > 0) {
-        toast.info('All businesses found are already in your database.');
+        const message = onlyEmail
+          ? 'No new businesses with email addresses found in your database.'
+          : 'All businesses found are already in your database.';
+        toast.info(message);
         setFoundBusinesses([]);
         setLoading(false);
         return;
@@ -299,7 +308,8 @@ const Action = () => {
         location,
         business_type: businessType,
         count_requested: parseInt(count),
-        leads_found: uniqueMappedBusinesses.length
+        leads_found: uniqueMappedBusinesses.length,
+        only_email_mode: onlyEmail
       });
 
       // Use the IDs returned by Supabase (with safety check for dummy/failed inserts)
@@ -540,14 +550,24 @@ Rules:
         <Card data-testid="step-find-businesses">
           <CardHeader className="flex flex-row items-center justify-between space-y-0">
             <CardTitle className="text-2xl font-semibold tracking-tight text-slate-900">Step 1: Find Businesses</CardTitle>
-            <Button
-              variant={isTestMode ? "default" : "outline"}
-              size="sm"
-              onClick={() => setIsTestMode(!isTestMode)}
-              className="text-xs"
-            >
-              {isTestMode ? "Switch to Search" : "Enable Test Mode"}
-            </Button>
+            <div className="flex gap-2">
+              <Button
+                variant={onlyEmail ? "default" : "outline"}
+                size="sm"
+                onClick={() => setOnlyEmail(!onlyEmail)}
+                className="text-xs"
+              >
+                {onlyEmail ? "All Businesses" : "Only Email"}
+              </Button>
+              <Button
+                variant={isTestMode ? "default" : "outline"}
+                size="sm"
+                onClick={() => setIsTestMode(!isTestMode)}
+                className="text-xs"
+              >
+                {isTestMode ? "Switch to Search" : "Enable Test Mode"}
+              </Button>
+            </div>
           </CardHeader>
           <CardContent className="space-y-6">
             {isTestMode ? (

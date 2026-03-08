@@ -1,0 +1,61 @@
+# Strategic Plan: FunnelFox Next-Gen Email Campaign System
+
+This document outlines a phased roadmap to transform the current simple template system into a high-performance, AI-driven outreach engine.
+
+## Phase 1: Campaign Intelligence & Sequencing
+**Goal**: Move from single-shot emails to multi-day automated sequences.
+
+### 1.1 Sequence Builder (Backend & Database)
+- **Database Update**: Create a `sequences` table and a `sequence_steps` table.
+- **Logic**: Each step defines a delay (e.g., "Wait 2 days") and a template.
+- **Smart Stop**: Automatically stop a sequence for a contact if they reply (detected via incoming email webhooks or manual status change).
+
+### 1.2 AI Personalization Engine (Prompt Engineering)
+- **Dynamic Variables**: Support variables like `{{business_name}}`, `{{rating}}`, `{{icebreaker}}`.
+- **AI Hook Generation**: Integration with Gemini to generate a unique "Icebreaker" for every lead based on their specific niche and reviews *before* sending.
+
+---
+
+## Phase 2: Deliverability & Reputation Protection
+**Goal**: Ensure emails land in the primary inbox, not spam.
+
+### 2.1 Domain Warmup & Throttling
+- **Daily Caps**: Implement a per-sender daily limit (e.g., 50 emails/day) to mimic human behavior.
+- **Randomized Sending**: Add random jitter between 5-15 minutes between sends in a campaign.
+
+### 2.2 Domain Health Check
+- **Setup UI**: Add a "Settings" page that verifies SPF/DKIM/DMARC records are correctly configured in order to prevent "Spoofing" flags.
+
+---
+
+## Phase 3: Advanced Analytics & Tracking
+**Goal**: Measure ROI and engagement, not just sends.
+
+### 3.1 Tracking Infrastructure
+- **Open Tracking**: Embed a invisible 1x1 pixel in every outreach email.
+- **Link Proxy**: Route all links through a FunnelFox proxy URL to track clicks per campaign.
+
+### 3.2 Analytics Dashboard
+- **Metrics**: Open Rate, Click-Through Rate (CTR), Reply Rate, and Conversion (Status -> Interested).
+
+---
+
+## Phase 4: Multi-Channel Expansion
+**Goal**: Be where the leads are.
+
+### 4.1 LinkedIn Integration Bridge
+- Add an "Action Type" to sequences: "Manual LinkedIn Follow" or "LinkedIn Message" reminders.
+- Provide a one-click button to open the contact's LinkedIn profile during a sequence.
+
+---
+
+## Implementation Roadmap (Next Steps)
+
+1.  **Immediate**: Update [schema.sql](file:///D:/Under%20Development%20Projects/FunnelFox/Supabase/schema.sql) to support multiple steps in a campaign.
+2.  **Short-term**: Refactor [Campaigns.js](file:///D:/Under%20Development%20Projects/FunnelFox/frontend/src/pages/Campaigns.js) to a "Sequence Editor" UI.
+3.  **Mid-term**: Implement the "Smart Senders" cloud function to process and dispatch sequence steps.
+
+---
+
+> [!TIP]
+> **Why this matters**: In 2026, cold email is increasingly difficult. Generic blasts are dead. Success requires **Frequency** (sequences) + **Relevance** (AI personalization) + **Reputation** (deliverability).

@@ -1,0 +1,163 @@
+# Walkthrough - Email Personalization & Preview
+
+I have added powerful personalization features to your cold email outreach. Now, you can use placeholders like `{Business_Name}` to make every email feel custom-made for the lead.
+
+## New Features
+
+### 1. Placeholder Support
+You can now use the following tags in your email templates (both in the AI-generated ones and your custom campaigns):
+- `{Business_Name}`: The name of the company.
+- `{Location}`: The city or address of the business.
+- `{Website}`: The URL of their current website.
+- `{Phone}`: Their business phone number.
+- `{Service}`: The type of service they offer (e.g., "restaurant", "café", "photography").
+
+Here's the full breakdown with the `{Service}` value you'd plug in for each category:
+
+---
+
+**🍽️ Food & Hospitality**
+| Business Type | `{Service}` |
+
+| Restaurant | restaurant |
+| Café | café |
+| Bakery | bakery |
+| Food truck | food truck |
+| Catering service | catering service |
+| Bar & lounge | bar |
+| Hotel & guesthouse | accommodation |
+
+---
+
+**💪 Health & Wellness**
+| Business Type | `{Service}` |
+
+| Gym & fitness studio | gym & fitness classes |
+| Yoga / pilates studio | yoga & pilates classes |
+| Personal trainer | personal training |
+| Physiotherapy clinic | physiotherapy |
+| Massage & spa | massage & spa treatments |
+| Nutritionist | nutrition consulting |
+
+---
+
+**🏠 Home Services**
+| Business Type | `{Service}` |
+
+| Plumber | plumbing services |
+| Electrician | electrical services |
+| Cleaning service | cleaning services |
+| Interior designer | interior design |
+| Landscaping | landscaping & gardening |
+| Moving company | moving & relocation |
+| HVAC / AC repair | AC & heating repair |
+
+---
+
+**🏡 Real Estate & Legal**
+| Business Type | `{Service}` |
+
+| Real estate agency | real estate |
+| Property management | property management |
+| Law firm | legal services |
+| Accountant | accounting & tax services |
+| Mortgage broker | mortgage & loans |
+
+---
+
+**💇 Beauty & Personal Care**
+| Business Type | `{Service}` |
+
+| Hair salon | hair styling & cuts |
+| Barbershop | haircuts & grooming |
+| Nail salon | nail care |
+| Tattoo studio | tattoo & piercing |
+| Makeup artist | makeup & beauty |
+| Skincare clinic | skincare treatments |
+
+---
+
+**🎓 Education & Coaching**
+| Business Type | `{Service}` |
+
+| Tutoring center | tutoring & academic support |
+| Driving school | driving lessons |
+| Language school | language courses |
+| Life & business coach | coaching & consulting |
+| Daycare & nursery | childcare |
+
+---
+
+**🔧 Automotive**
+| Business Type | `{Service}` |
+
+| Auto repair shop | car repair & maintenance |
+| Car wash & detailing | car wash & detailing |
+| Tire shop | tire fitting & repair |
+| Car rental | car rental |
+
+---
+
+**🏥 Medical & Healthcare**
+| Business Type | `{Service}` |
+
+| Dental clinic | dental care |
+| Optician | eye care & optometry |
+| Veterinary clinic | veterinary care |
+| Private doctor | medical consultations |
+| Pharmacy | pharmacy & medications |
+
+---
+
+**📸 Creative & Events**
+| Business Type | `{Service}` |
+
+| Photographer | photography & videography |
+| Event planner | event planning |
+| Wedding venue | wedding services |
+| Print shop | printing & design |
+| Recording studio | music recording |
+
+---
+
+**🛒 Retail & Local Shops**
+| Business Type | `{Service}` |
+
+| Boutique clothing store | clothing & fashion |
+| Florist | flowers & arrangements |
+| Bookshop | books & stationery |
+| Electronics repair | electronics repair |
+| Gift shop | gifts & souvenirs |
+
+---
+
+So in email it would flow like this:
+
+> *"Today, I searched for **{Service}** in **{Location}**. Found a few competitors — but not **{Business_Name}**."*
+
+For a restaurant in Dubai it becomes:
+
+> *"Today, I searched for **restaurant** in **Dubai**. Found a few competitors — but not **The Golden Fork**."*
+
+Clean, specific, and fully automated.
+
+
+### 2. Real-Time Personalized Preview
+In the **Action Center (Step 4)**, you will now see a "Previewing Email" section. 
+- It shows exactly how the email will look for a specific lead.
+- You can click **Next** or **Previous** to scroll through your selected leads and verify that the names and locations are being replaced correctly.
+
+### 3. Individualized Sending
+When you click **Send Emails**, the app now iterates through each lead and generates a unique message for them before sending. This ensures that a lead in "New York" won't accidentally get an email mentioning "Chicago".
+
+## How to Use
+
+1.  **Create a Campaign**: Go to the **Campaigns** page and click **Create Campaign**. You'll see a new "Available Placeholders" box to help you.
+2.  **Run an Action**: Find some businesses in the **Action Center**.
+3.  **Choose Strategy**: Pick a campaign or generate an AI message.
+4.  **Preview**: In the final step, check the preview to see the placeholders in action!
+
+## Verification Results
+- **Logic**: Verified that placeholders are replaced globally in the template.
+- **UI**: Added a pagination-style previewer to Step 4.
+- **Reliability**: Updated the send logic to handle individual personalization per recipient.

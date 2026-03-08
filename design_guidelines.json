@@ -1,0 +1,123 @@
+{
+  "typography": {
+    "font_family": {
+      "headings": "Manrope, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "usage": {
+      "h1": "text-4xl font-bold tracking-tight text-slate-900",
+      "h2": "text-2xl font-semibold tracking-tight text-slate-900",
+      "h3": "text-xl font-semibold tracking-tight text-slate-900",
+      "body": "text-base font-normal leading-relaxed text-slate-600",
+      "small": "text-sm font-medium text-slate-500",
+      "label": "text-xs font-semibold uppercase tracking-wider text-slate-500"
+    },
+    "installation": "Import fonts via Google Fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');"
+  },
+  "colors": {
+    "theme": "light",
+    "palette": {
+      "background": "#ffffff",
+      "foreground": "#0f172a",
+      "primary": "#6366f1",
+      "primary_foreground": "#ffffff",
+      "secondary": "#f1f5f9",
+      "secondary_foreground": "#0f172a",
+      "muted": "#f8fafc",
+      "muted_foreground": "#64748b",
+      "accent": "#eef2ff",
+      "accent_foreground": "#4338ca",
+      "destructive": "#ef4444",
+      "destructive_foreground": "#ffffff",
+      "border": "#e2e8f0",
+      "input": "#e2e8f0",
+      "ring": "#6366f1"
+    },
+    "chart_colors": [
+      "#6366f1",
+      "#14b8a6",
+      "#f59e0b",
+      "#ec4899",
+      "#8b5cf6"
+    ],
+    "usage_rules": "Use 'slate' scale for neutrals. Primary color is Indigo-500. Avoid harsh blacks; use Slate-900 for text."
+  },
+  "layout": {
+    "grid_system": "Bento Grid Mode B (High Density)",
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-12",
+      "element_gap": "gap-6",
+      "section_gap": "gap-8"
+    },
+    "structure": {
+      "sidebar": "w-64 fixed h-full border-r border-slate-200 bg-slate-50/50 backdrop-blur-xl z-30 hidden md:flex flex-col",
+      "header": "h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-20 flex items-center px-6 justify-between",
+      "main_content": "flex-1 md:pl-64 min-h-screen bg-white"
+    }
+  },
+  "components": {
+    "card": {
+      "style": "bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200",
+      "header": "p-6 border-b border-slate-100",
+      "content": "p-6"
+    },
+    "button": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm hover:shadow rounded-lg px-4 py-2 font-medium transition-all active:scale-95",
+      "secondary": "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 shadow-sm rounded-lg px-4 py-2 font-medium transition-all active:scale-95",
+      "ghost": "hover:bg-slate-100 text-slate-600 hover:text-slate-900 rounded-lg px-4 py-2 transition-colors"
+    },
+    "input": {
+      "style": "flex h-10 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    },
+    "badge": {
+      "style": "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+      "variants": {
+        "default": "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+        "secondary": "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        "outline": "text-foreground"
+      }
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-white/70 border border-white/20 shadow-sm",
+    "clay_effect": "bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] border border-slate-100",
+    "gradients": "None. Use solid colors or extremely subtle mesh gradients (opacity 5%) for backgrounds only."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "stroke-width={1.5} className='w-5 h-5'"
+  },
+  "images": {
+    "avatars": [
+      {
+        "url": "https://images.pexels.com/photos/4565706/pexels-photo-4565706.jpeg",
+        "description": "Professional woman avatar",
+        "category": "user_avatar"
+      },
+      {
+        "url": "https://images.pexels.com/photos/5511644/pexels-photo-5511644.jpeg",
+        "description": "Professional man avatar",
+        "category": "user_avatar"
+      }
+    ],
+    "logos": [
+      {
+        "url": "https://images.unsplash.com/photo-1628760584600-6c31148991e9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjBtaW5pbWFsfGVufDB8fHx8MTc2OTM5MDA5MHww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract blue oval logo",
+        "category": "company_logo"
+      }
+    ]
+  },
+  "universal_guidelines": [
+    "Do not use gradients for text or buttons.",
+    "Do not center-align main content; use left alignment for readability.",
+    "Use generous padding (p-6, p-8) inside cards.",
+    "All interactive elements must have a hover state.",
+    "Use 'Manrope' for all headings and 'Inter' for body text.",
+    "Primary color is Indigo (#6366f1). Use it sparingly for key actions.",
+    "Ensure all text has sufficient contrast (Slate-600+ on White).",
+    "Add data-testid to all interactive elements."
+  ],
+  "instructions_to_main_agent": "Implement the dashboard using the 'Bento Grid Mode B' layout. Use the provided color palette in tailwind.config.js. Create reusable components for Cards, Stats, and Tables based on the 'Soft Utility' archetype. Ensure the sidebar is fixed and the main content scrolls. Use Recharts for analytics with the specified chart colors."
+}

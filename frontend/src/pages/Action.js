@@ -221,6 +221,7 @@ const Action = () => {
           name: place.title || "",
           address: place.address || "",
           phone: place.phoneNumber || "",
+          email: place.email || "", // Added email from Serper
           website: website, // Keep the original for the link
           realWebsite: effectiveWebsite, // Filtered version
           isSocialOnly: isSocial,
@@ -272,6 +273,7 @@ const Action = () => {
         name: b.name,
         address: b.address,
         phone: b.phone,
+        email: b.email, // Added email
         website: b.website,
         real_website: b.realWebsite,
         is_social_only: b.isSocialOnly,

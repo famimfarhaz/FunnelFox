@@ -1,7 +1,7 @@
 [build]
   command = "cd frontend && npm install && npm run build"
   publish = "out/dist"
-  environment = { SECRETS_SCAN_OMIT_KEYS = "REACT_APP_SUPABASE_ANON_KEY,REACT_APP_SUPABASE_URL" }
+  environment = { SECRETS_SCAN_OMIT_KEYS = "REACT_APP_SUPABASE_ANON_KEY,REACT_APP_SUPABASE_URL,REACT_APP_SERPER_API_KEY,REACT_APP_GEMINI_API_KEY,REACT_APP_RESEND_API_KEY" }
 
 [[redirects]]
   from = "/*"

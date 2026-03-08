@@ -52,5 +52,5 @@ Follow these steps in the exact order shown. You will need two separate terminal
 
 ## 3. Summary of Links
 - **Frontend App**: [http://localhost:3000](http://localhost:3000)
-- **Proxy Backend**: [http://localhost:8000](http://localhost:8000) (Must be running for searches to work)
+- **Proxy Backend**: [http://localhost:YOUR_BACKEND_PORT](http://localhost:YOUR_BACKEND_PORT) (Must be running for searches to work)
 - **Data Storage**: Your browser's `localStorage` (No database needed!)

@@ -15,11 +15,11 @@ Run these three commands in your terminal one by one. Replace the text after the
 
 For Lead Discovery:
 
-npx supabase secrets set SERPER_API_KEY=cbdfc87fa264d53bfbc85afdd353a970a3278147
+npx supabase secrets set SERPER_API_KEY=YOUR_SERPER_API_KEY_HERE
 
 For Email Sending:
 
-npx supabase secrets set RESEND_API_KEY=re_doVsmp3E_5vVth8vrbUJrJFASXbQUrmaP
+npx supabase secrets set RESEND_API_KEY=YOUR_RESEND_API_KEY_HERE
 
 For your "From" address:
 
